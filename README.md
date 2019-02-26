@@ -1,7 +1,6 @@
 Welcome to 
     SPEED SERCHER
-        -By TJ Productions 2018
-        (Tushar Jain Software Solutions)
+        -By Tushar Jain
                 
 1) Indexing- This means storing the name and location of your files present on your system in a file.
              Choosing this option will create/update your file Index, which then will be used to give

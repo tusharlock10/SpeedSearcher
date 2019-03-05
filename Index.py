@@ -1,7 +1,9 @@
 import os,sys,shutil, time
-from colorama import init, Fore, Back, Style
+try:from colorama import init, Fore, Back, Style
+except:pass
 
-init(convert=True, autoreset=True)
+try:init(convert=True, autoreset=True)
+except:pass
 
 #####################  TJ Module functions ###################
 def delete(path):
@@ -33,10 +35,11 @@ def get_startup_path():
 def copy2clip(string):
     cmd='echo '+string+'|clip'
     os.system(cmd)
+    
 
 def print_colored_text(text, snippets):
     #text- big string of text
-    #sniipet- the part of text to be coloured
+    #snippet- the part of text to be coloured
     string=""
     for snippet in snippets:
         
@@ -46,7 +49,8 @@ def print_colored_text(text, snippets):
         string=L[0]
         
         for x in range(1,i):
-            string+=(Fore.GREEN+snippet.upper()+Fore.WHITE+L[x])
+            try:string+=(Fore.GREEN+snippet.upper()+Fore.WHITE+L[x])
+            except:string+=(snippet.upper()+L[x])
     return string
 
 
@@ -57,7 +61,7 @@ def make_drives():
 
     return l
 
-All_Drives=make_drives()
+All_Drives=make_drives()+['C:\\Users\\','C:\\Program Files\\', 'C:\\Program Files (x86)\\']
 
        
 def Index(Drives=All_Drives, startupMode=False):
